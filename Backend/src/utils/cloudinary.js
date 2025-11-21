@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
-import fs from "fs";
+import fs from "fs"; // It is file system in nodejs help to read, remove, write manage all these.
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -15,13 +15,14 @@ const uploadOnCloudinary = async (localFilePath) => {
       resource_type: "auto",
     });
     // file as been uploaded successfully
-    console.log("File is uploaded successfully", response.url);
+    console.log("File is uploaded on cloudinary", response.url);
 
     // not to upload images in localPath code line - 21
-    fs.unlinkSync(localFilePath)
+    fs.unlinkSync(localFilePath);
     return response;
   } catch (error) {
     fs.unlinkSync(localFilePath); // remove the locally save file as the upload operation got failed
+    return null;
   }
 };
 
