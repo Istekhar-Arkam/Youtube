@@ -12,7 +12,7 @@ app.use(
 app.use(express.json({ limit: "16kb" }));
 app.use(cookieParser()); // it is used to access cookies of user and also to set cookies from my server and perform curd operation
 app.use(express.urlencoded({ extended: true, limit: "16kb" })); // its used to take data which comes in url encoded form
-app.use(express.static("Public")); // it is use to store file,folder,image
+app.use(express.static("public")); // it is use to store file,folder,image
 
 // route import
 
