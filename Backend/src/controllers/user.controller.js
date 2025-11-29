@@ -17,7 +17,6 @@ const registerUser = asyncHandler(async (req, res) => {
   // 8: return response
 
   const { fullName, email, username, password } = req.body;
-  console.log("email", email);
   // 1 : validation checking in each input is empty or not
   // first way
 
@@ -32,16 +31,16 @@ const registerUser = asyncHandler(async (req, res) => {
   ) {
     throw new ApiError(400, "All Fields are required");
   }
-
   // 2:  User will call in the behalf of user to mongodb
   //  i am the current user and find same user in database which is match to database user or email
 
-  const existedUser = User.findOne({
+  const existedUser = await User.findOne({
     $or: [{ username }, { email }],
   });
   if (existedUser) {
     throw new ApiError(409, "User with email or username is already existed");
   }
+
   // 3: Image handle : Check for image,check for avatar and here multer gives th access of file in body
 
   const avatarLocalPath = req.files?.avatar[0]?.path;
