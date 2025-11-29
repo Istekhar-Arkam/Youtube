@@ -46,6 +46,13 @@ const registerUser = asyncHandler(async (req, res) => {
   const avatarLocalPath = req.files?.avatar[0]?.path;
   const coverImageLocalPath = req.files?.coverImage[0]?.path;
 
+  // this code is used to check cover image is present or not uncomment if needed and comment line 47
+
+  // let coverImageLocalPath;
+  // if(req.files && Array.isArray (req.files.coverImage) && req.files.coverImage.length >0){
+  //   coverImageLocalPath = req.files.coverImage[0].path;
+  // }
+
   if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar file is required");
   }
@@ -53,6 +60,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   const avatar = await uploadOnCloudinary(avatarLocalPath);
   const coverImage = await uploadOnCloudinary(coverImageLocalPath);
+
   if (!avatar) {
     throw new ApiError(400, "Avatar file is required");
   }
