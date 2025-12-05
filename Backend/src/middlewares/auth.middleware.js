@@ -17,7 +17,8 @@ export const verifyJWT = asyncHandler(async (req, _, next) => {
       "-password -refreshToken"
     );
     if (!user) {
-      // next : discuss about frontend
+      
+      
       throw new ApiError(401, "Unauthorized: User not found");
     }
     req.user = user;
