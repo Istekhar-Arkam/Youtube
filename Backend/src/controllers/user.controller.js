@@ -6,6 +6,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt, { decode } from "jsonwebtoken";
 
 // here to generate token first find the user and then call the method to generate token from model
+
 const generateAccessAndRefreshToken = async (userId) => {
   try {
     const user = await User.findById(userId);
@@ -196,12 +197,14 @@ const logoutUser = asyncHandler(async (req, res) => {
 const refreshAccessToken = asyncHandler(async (req, res) => {
   // This incomingRefreshToken token is send by user
 
+  // getting token from cookie or body
   const incomingRefreshToken =
     req.cookies.refreshToken || req.body.refreshToken;
 
   if (!incomingRefreshToken) {
     throw new ApiError(401, "Unauthorized request");
   }
+  // verify the incoming token
   try {
     const decodedToken = jwt.verify(
       incomingRefreshToken,
