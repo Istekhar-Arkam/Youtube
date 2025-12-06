@@ -222,7 +222,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     if (incomingRefreshToken !== user?.refreshToken) {
       throw new ApiError(401, "Refresh token is expired or used");
     }
-    // if both are same then we will generate new access token +966505735038
+    // if both are same then we will generate new access token
 
     const options = {
       httpOnly: true,
