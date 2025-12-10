@@ -350,11 +350,14 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Username is missing");
   }
   const channel = await User.aggregate([
+    // here we match the user
     {
       $match: {
         username: username?.toLowerCase(),
       },
     },
+
+    // checked how much the subscribers with the help of channel
     {
       $lookup: {
         from: "subscriptions",
@@ -363,6 +366,8 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
         as: "subscribers",
       },
     },
+
+    // checked how much you had subscribed with the help of subscriber
     {
       $lookup: {
         from: "subscriptions",
@@ -371,6 +376,8 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
         as: "subscribedTo",
       },
     },
+
+    //add few fields in user model like subscribers count , channels subscribed to count , is subscribed or not
     {
       $addFields: {
         subscribersCount: { $size: "$subscribers" },
@@ -384,7 +391,31 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
         },
       },
     },
+    {
+      $project: {
+        fullName: 1,
+        username: 1,
+        subscribersCount: 1,
+        channelsSubscribedToCount: 1,
+        isSubscribed: 1,
+        avatar: 1,
+        coverImage: 1,
+        email: 1,
+      },
+    },
   ]);
+  if (!channel?.length) {
+    throw new ApiError(404, "Channel not found");
+  }
+  return res
+    .status(200)
+    .json(
+      new ApiResponse(
+        200,
+        channel[0],
+        "User channel profile fetched successfully"
+      )
+    );
 });
 
 export {
