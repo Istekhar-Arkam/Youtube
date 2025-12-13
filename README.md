@@ -30,5 +30,3 @@ This project handles user authentication, video uploads, likes, comments, subscr
 
 ---
 
-## 📂 Project Structure
-
