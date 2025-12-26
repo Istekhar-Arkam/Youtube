@@ -3,11 +3,21 @@ import { Comment } from "../models/comment.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
-
+import { Video } from "../models/video.model.js";
 const getVideoComments = asyncHandler(async (req, res) => {
   //TODO: get all comments for a video
   const { videoId } = req.params;
   const { page = 1, limit = 10 } = req.query;
+
+  const video = await Video.findById(videoId);
+  if (!video) {
+    throw new ApiError(404, "Video not found");
+  }
+  const count = page * limit;
+  if (!count) {
+    throw new ApiError(404, "Minimum 1 document should be asked");
+  }
+  const comments = await Comment.aggregate([]);
 });
 
 const addComment = asyncHandler(async (req, res) => {
