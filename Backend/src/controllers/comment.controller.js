@@ -1,9 +1,10 @@
-import mongoose, { isValidObjectId } from "mongoose";
+import mongoose from "mongoose";
 import { Comment } from "../models/comment.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { Video } from "../models/video.model.js";
+
 const getVideoComments = asyncHandler(async (req, res) => {
   //TODO: get all comments for a video
   const { videoId } = req.params;
@@ -83,7 +84,7 @@ const addComment = asyncHandler(async (req, res) => {
       video: videoId,
       owner: req.user?._id,
     });
-      return res.status(201).json(
+    return res.status(201).json(
       new ApiResponse(
         200,
         {
@@ -93,17 +94,63 @@ const addComment = asyncHandler(async (req, res) => {
       )
     );
   } catch (error) {
-     console.log("Error while creating comment", error);
+    console.log("Error while creating comment", error);
     throw new ApiError(400, "Comment not created");
   }
 });
 
 const updateComment = asyncHandler(async (req, res) => {
   // TODO: update a comment
+
+  const { commentId } = req.params;
+  const { content } = req.body;
+
+  if (!content?.trim()) {
+    throw new ApiError(404, "Comment should not be empty");
+  }
+
+  const comment = await Comment.findByIdAndUpdate(
+    commentId,
+    {
+      $set: {
+        content,
+      },
+    },
+    { new: true }
+  );
+
+  return res.status(200).json(
+    new ApiResponse(
+      200,
+      {
+        comment,
+      },
+      "Comment updated successfully"
+    )
+  );
 });
 
 const deleteComment = asyncHandler(async (req, res) => {
   // TODO: delete a comment
+
+  const { commentId } = req.params;
+
+  try {
+    const comment = await Comment.deleteOne({ _id: commentId });
+
+    res.status(200).json(
+      new ApiResponse(
+        200,
+        {
+          "Comment deleted": comment.deletedCount,
+        },
+        "Comment deleted succesfully"
+      )
+    );
+  } catch (error) {
+    console.log("Error occurred while deleting comment", error);
+    throw new ApiError(400, "Comment not deleted");
+  }
 });
 
 export { getVideoComments, addComment, updateComment, deleteComment };
