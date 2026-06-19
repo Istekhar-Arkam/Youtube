@@ -49,6 +49,10 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
+// Use Encryption → When you need to get back the original value (like storing payment info or messages).
+
+// Use Bcrypt → When you just need to verify input against stored data (like passwords).
+
 // you cannot just directly do encryption you need to use mongoose hooks
 // line 55 to 57 is for password reset,update from user
 // before saving data Encrypt password with the help of pre hook
@@ -60,10 +64,13 @@ userSchema.pre("save", async function (next) {
 });
 
 //custom method
+// Bcrypt library is used to hash your password and also check your password
 
 userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
+
+// JWT is a bearer token (whoever give the token, i will share the data)
 
 userSchema.methods.generateAccessToken = function () {
   return jwt.sign(

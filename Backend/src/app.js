@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
+// CORS : [Cross-Origin Resource Sharing] Provide you a safety of our application,
 const app = express();
 app.use(
   cors({
@@ -10,7 +10,7 @@ app.use(
   })
 ); // uses of app.use ,when u wanted to do the middleware or configuration setting
 app.use(express.json({ limit: "16kb" }));
-app.use(cookieParser()); // it is used to access cookies of user and also to set cookies from my server and perform curd operation
+app.use(cookieParser()); // it is used to access cookies of user browser and also to set cookies from my server and perform curd operation
 app.use(express.urlencoded({ extended: true, limit: "16kb" })); // its used to take data which comes in url encoded form
 app.use(express.static("public")); // it is use to store file,folder,image
 
