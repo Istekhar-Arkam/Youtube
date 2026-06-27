@@ -64,7 +64,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const avatarLocalPath = req.files?.avatar[0]?.path;
   const coverImageLocalPath = req.files?.coverImage[0]?.path;
 
-  // this code is used to check cover image is present or not uncomment if needed and comment line 47
+  // this code is used to check cover image is present or not, uncomment if needed.
 
   // let coverImageLocalPath;
   // if(req.files && Array.isArray (req.files.coverImage) && req.files.coverImage.length >0){
