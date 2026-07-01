@@ -8,7 +8,7 @@
 
 // Nodejs feature
 
-// Event loop :Means generally it a non-blocking,javascript is a single threaded language and rest work in a event loop,if you give a code to execute it will complete and again go in loop and keep moving.
+// Event loop : Means generally it a non-blocking,javascript is a single threaded language and rest work in a event loop,if you give a code to execute it will complete and again go in loop and keep moving.
 
 // Single threaded : means at a time it will work once not a multi-tasker.(One time one work)
 
@@ -25,7 +25,7 @@
 
 // DNS Works: Domain Name Service, it is used to provide the IP address to connect to the web server and load the website.
 
-// or 
+// or
 
 // DNS : it is used to give location
 
@@ -71,6 +71,18 @@
 // 2: Handle asynchronous operation.
 // 3 :manage fs,networking,timers
 
-                           // Express
+// Express
 
 // its framework of nodejs.
+
+// mongoose
+
+// mongoose is an object data modeling
+// provide a schema-based solution to model application data.
+
+// REST APIs
+
+// 1. it communication between client and server using HTTP.
+// 2. they are mainly identified by a url.
+// 3. they use standard https method like GET,POST,PUT,and DELETE.
+// 4. data exchange in format like json or xml.
