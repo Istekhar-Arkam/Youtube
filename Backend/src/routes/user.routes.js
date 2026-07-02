@@ -17,7 +17,7 @@ import { upload } from "../middlewares/multer.middleware.js";
 const router = Router();
 
 router.route("/register").post(
-  // this how the file handle here or this is how inject middleware line no - 8 to 16
+  // this how the file handle here or this is how inject middleware line no - 19 to 46
   upload.fields([
     { name: "avatar", maxCount: 1 },
     {

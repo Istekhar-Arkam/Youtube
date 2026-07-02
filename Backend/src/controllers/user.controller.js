@@ -12,7 +12,7 @@ const generateAccessAndRefreshToken = async (userId) => {
     const user = await User.findById(userId);
     const accessToken = user.generateAccessToken();
     const refreshToken = user.generateRefreshToken();
-    // this is how to send refreshToken in database
+    // this is how to save refreshToken in database
     user.refreshToken = refreshToken;
     await user.save({ validateBeforeSave: false });
 
