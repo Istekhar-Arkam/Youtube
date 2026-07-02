@@ -6,10 +6,14 @@ const app = express();
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
-    credentials: true,
+    credentials: true, 
   })
-); // uses of app.use ,when u wanted to do the middleware or configuration setting
+); 
+// uses of app.use ,when u wanted to do the middleware or configuration setting
+
+// data come from url,body,json,in line 13
 app.use(express.json({ limit: "16kb" }));
+// body parser - express unable to take json earlier so they use body parser.now no need to use body parser because express has inbuilt body parser
 app.use(cookieParser()); // it is used to access cookies of user browser and also to set cookies from my server and perform curd operation
 app.use(express.urlencoded({ extended: true, limit: "16kb" })); // its used to take data which comes in url encoded form
 app.use(express.static("public")); // it is use to store file,folder,image

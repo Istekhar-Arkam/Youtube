@@ -49,13 +49,13 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-// Use Encryption → When you need to get back the original value (like storing payment info or messages).
+// Encryption → means to convert normal language into a machine code. 
 
 // Use Bcrypt → When you just need to verify input against stored data (like passwords).
 
-// you cannot just directly do encryption you need to use mongoose hooks
-// line 55 to 57 is for password reset,update from user
-// before saving data Encrypt password with the help of pre hook
+// you cannot just directly do encrypt you need to use mongoose hooks
+
+//line : 60 ,before saving data Encrypt password with the help of pre hook
 
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next(); // This if line is for only change my password when user change not in every changes like profile photo or any other update
@@ -71,6 +71,11 @@ userSchema.methods.isPasswordCorrect = async function (password) {
 };
 
 // JWT is a bearer token (whoever give the token, i will share the data)
+
+// Access Token = 1. its a short lived.
+// 2."Entry pass" to access protected resources.
+// Refresh Token = 1. its a long lived.
+// 2 . "Pass renewal card" that lets you obtain a new entry pass without logging in again.
 
 userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
@@ -99,3 +104,5 @@ userSchema.methods.generateRefreshToken = function () {
 };
 
 export const User = mongoose.model("User", userSchema);
+
+// Access token : if you have access token you can login and access the data but it is short lived ,if the login session is expired for security reason,here comes the refresh token,who is stored in the database and also in the cookie,if the access token is expired then you can use refresh token to get new access token without login again.
