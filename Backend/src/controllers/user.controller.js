@@ -127,7 +127,7 @@ const loginUser = asyncHandler(async (req, res) => {
   }
   // if you want any one from username or email then use below code
 
-  // if(!username || !email){
+  // if(!(username || email)){
   // throw new ApiError(400,"Username or email is required");
   // }
 
