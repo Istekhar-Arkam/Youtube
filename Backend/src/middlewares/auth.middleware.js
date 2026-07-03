@@ -3,6 +3,8 @@ import { ApiError } from "../utils/ApiError.js";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.model.js";
 
+// This entire will verify that user is there or not.
+
 export const verifyJWT = asyncHandler(async (req, _, next) => {
   try {
     const token =
@@ -19,6 +21,7 @@ export const verifyJWT = asyncHandler(async (req, _, next) => {
     if (!user) {
       throw new ApiError(401, "Unauthorized: User not found");
     }
+    // here add new object in req
     req.user = user;
     next();
   } catch (error) {
