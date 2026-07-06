@@ -2,10 +2,6 @@
 
 // Nodejs : Node.js is a javascript runtime environment for executing javascript code outside the browser.It is a open-source and cross platform.(cross platform mean it can run in window,linux,mac)
 
-// V8
-
-// V8 is written in c++ for speed
-
 // Nodejs feature
 
 // Event loop : Means generally it a non-blocking,javascript is a single threaded language and rest work in a event loop,if you give a code to execute it will complete and again go in loop and keep moving.
@@ -27,7 +23,7 @@
 
 // or
 
-// DNS : it is used to give location
+// DNS : it is used to give location or give the address of the website to connect to the web server and load the website.
 
 // Type of DNS
 
@@ -66,6 +62,8 @@
 // Event-Driven : It allows to handle multiple tasks efficiently without blocking execution.
 
 // V8 : taken out from chrome,open source javascript,compile js to native machine.
+
+// V8 is written in c++ for speed
 
 // Libuv : 1: Multi-platform support library for node.js
 // 2: Handle asynchronous operation.

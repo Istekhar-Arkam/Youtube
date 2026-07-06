@@ -252,7 +252,7 @@ const changeCurrentPassword = asyncHandler(async (req, res) => {
   const { oldPassword, newPassword } = req.body;
 
   // for confirm password change first add in confirmPassword in body
-  // if(!(newPassword && oldPassword)){}
+  // if(!(newPassword === confirmPassword)){}
 
   const user = await User.findById(req.user?._id);
   const isPasswordCorrect = await user.isPasswordCorrect(oldPassword);
