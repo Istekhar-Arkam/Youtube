@@ -279,7 +279,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
   if (!fullName || !email || !username) {
     throw new ApiError(400, "All fields are required");
   }
-  const user = User.findByIdAndUpdate(
+  const user = await User.findByIdAndUpdate(
     req.user?._id,
     {
       $set: {
@@ -295,7 +295,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, user, "User details updated successfully"));
 });
 
-// Important note: For file update make separate controller for better approach because when you save the entire user it also the text data and more network congestion
+// Important note: For file update make separate controller for better approach because when you save the entire user it also save the text data and more network congestion
 
 const updateUserAvatar = asyncHandler(async (req, res) => {
   const avatarLocalPath = req.file?.path;

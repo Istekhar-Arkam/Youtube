@@ -133,3 +133,10 @@
 // Sessions
 
 // A session stores user data on the server. The browser usually stores only a session ID in a cookie.
+
+// JWT is a bearer token (whoever give the token, i will share the data)
+
+// Access Token = 1. its a short lived.
+// 2."Entry pass" to access protected resources.
+// Refresh Token = 1. its a long lived.
+// 2 . "Pass renewal card" that lets you obtain a new entry pass without logging in again.
