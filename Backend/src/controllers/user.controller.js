@@ -297,11 +297,14 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
 
 // Important note: For file update make separate controller for better approach because when you save the entire user it also save the text data and more network congestion
 
-const updateUserAvatar = asyncHandler(async (req, res) => {
+const updateUserAvatar = asyncHandler(async (req, res) => { 
   const avatarLocalPath = req.file?.path;
   if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar file is required");
   }
+
+
+
   const avatar = await uploadOnCloudinary(avatarLocalPath);
   if (!avatar.url) {
     throw new ApiError(400, "Error while uploading on avatar");
@@ -397,6 +400,9 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
         },
       },
     },
+
+    // here we will project the fields which give you selected thing
+    
     {
       $project: {
         fullName: 1,

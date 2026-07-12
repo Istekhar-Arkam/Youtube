@@ -140,3 +140,14 @@
 // 2."Entry pass" to access protected resources.
 // Refresh Token = 1. its a long lived.
 // 2 . "Pass renewal card" that lets you obtain a new entry pass without logging in again.
+
+// Aggregation Pipeline: A powerful tool in MongoDB for processing and transforming document data.
+
+//or 
+
+// An aggregation pipeline in MongoDB is a sequence of stages where each stage processes the output of the previous stage, allowing you to filter, sort, group, transform, and calculate data to produce the final result.
+
+// lookup : It is used to join two collections in mongodb.
+//addFields : It is used to add new fields to the documents in the aggregation pipeline.
+
+// match : It is used to filter documents based on specified criteria in the aggregation pipeline.
