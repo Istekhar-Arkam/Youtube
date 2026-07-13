@@ -151,3 +151,5 @@
 //addFields : It is used to add new fields to the documents in the aggregation pipeline.
 
 // match : It is used to filter documents based on specified criteria in the aggregation pipeline.
+
+//mongooseAggregatePaginate : Not to show all data at once, it is used to show data in pages, like 10 data per page, 20 data per page, etc.
