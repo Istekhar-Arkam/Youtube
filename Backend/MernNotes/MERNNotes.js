@@ -41,7 +41,7 @@
 // HTTPs
 
 // 1 : Here the password is encrypted HTTP,encrypt data for secure communication.
-// 2 : used in online banking.banking.
+// 2 : used in online banking.
 
 // Node core modules : Core modules are included with nodejs installation,directly available for use without npm install.
 
@@ -80,7 +80,7 @@
 
 // REST APIs
 
-// 1. it communication between client and server using HTTP.
+// 1. it a medium to communication between client and server using HTTP.
 // 2. they are mainly identified by a url.
 // 3. they use standard https method like GET,POST,PUT,and DELETE.
 // 4. data exchange in format like json or xml.
@@ -162,16 +162,20 @@
 // N – Node.js → Runtime environment that runs JavaScript on the server.
 
 // why choose the mernstack for your project?
-// I chose MERN because it allows me to use JavaScript across the full stack, provides a fast development process, and offers good scalability and flexibility for modern web applications.
+
+// I choose MERN because it allows me to use JavaScript across the full stack, provides a fast development process, and offers good scalability and flexibility for modern web applications.
 
 // what is mongodb and why is it used in the mernstack?
+
 // "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It is used in the MERN stack because it works well with JavaScript, integrates easily with Node.js and Express, and provides flexibility and scalability for modern web applications.
 
 
 // explain the purpose of mongoose in a mern application
+
 // "Mongoose is an ODM library used to connect Node.js and Express applications with MongoDB. It allows us to define schemas, validate data, and perform database operations easily. It makes working with MongoDB more structured and manageable in a MERN application."
 
 // what is express.js and why is it used in the mernstack
+
 //"Express.js is a lightweight and flexible backend framework built on Node.js. In the MERN stack, it is used to create APIs, handle HTTP requests, manage routes and middleware, and connect the frontend with the database. It helps us build the backend of the application efficiently."
 
 //what is nodejs and why is it used in the mernstack
@@ -179,6 +183,7 @@
 //"Node.js is a JavaScript runtime environment used to run JavaScript on the server side. In the MERN stack, it is used to build the backend, handle server-side logic and API requests, and communicate with databases. It also allows developers to use JavaScript throughout the entire application, both frontend and backend."
 
 //advantage of using mongodb
+
 //"The main advantages of MongoDB are its flexible schema, scalability, high performance, and JSON-like document structure. It integrates easily with Node.js and JavaScript, which makes it a good choice for MERN stack applications."
 
 //Difference Between SQL and NoSQL
