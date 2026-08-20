@@ -85,12 +85,6 @@
 // 3. they use standard https method like GET,POST,PUT,and DELETE.
 // 4. data exchange in format like json or xml.
 
-// URL : Uniform resource Locator
-// URI : Uniform resource Identifier
-// URN : Uniform resource Name
-
-// HTTP : Hyper text transfer protocol
-
 // HTTP Method :
 
 // GET     : To get resource.
@@ -124,15 +118,13 @@
 // 500 Internal server error
 // 504 Gateway time out
 
-// HTTPs : HTTPS stands for Hypertext Transfer Protocol Secure, which is the secure version of the HTTP protocol used for encrypted communication over a computer network
-
 // Cookies
 
 // A cookie is a small piece of data stored in the user's browser.
 
 // Sessions
 
-// A session stores user data on the server. The browser usually stores only a session ID in a cookie.
+// It stores user data on the server. The browser usually stores only a session ID in a cookie.
 
 // JWT is a bearer token (whoever give the token, i will share the data)
 
@@ -176,7 +168,7 @@
 
 // what is express.js and why is it used in the mernstack
 
-//"Express.js is a lightweight and flexible backend framework built on Node.js. In the MERN stack, it is used to create APIs, handle HTTP requests, manage routes and middleware, and connect the frontend with the database. It helps us build the backend of the application efficiently."
+//"Express.js is a lightweight and flexible backend framework of Node.js. In the MERN stack, it is used to create APIs, handle HTTP requests, manage routes and middleware, and connect the frontend with the database. It helps us build the backend of the application efficiently."
 
 //what is nodejs and why is it used in the mernstack
 
@@ -194,3 +186,12 @@
 // Uses SQL queries	Uses database-specific query methods
 // Good for complex relationships	Good for flexible and rapidly changing data
 // Commonly uses vertical scaling	Commonly supports horizontal scaling
+
+// Cluster mode in Node.js allows an application to create multiple worker processes, enabling the application to utilize multiple CPU cores.
+
+//Worker Threads are a Node.js feature that allows JavaScript code to run in parallel on separate threads. They are mainly used for CPU-intensive operations so that the main event loop remains free to handle other asynchronous tasks and requests.
+
+// To improve scalability in a Node.js application, the goal is to make the application handle more users and more requests without a major drop in performance.
+
+
+// To improve scalability in Node.js, we can use clustering and horizontal scaling to utilize multiple CPU cores and servers, load balancing to distribute traffic, caching to reduce database load, database optimization, asynchronous processing with queues, worker threads for CPU-intensive tasks, stateless architecture, and CDN for static content. We should also monitor performance metrics to identify bottlenecks.
