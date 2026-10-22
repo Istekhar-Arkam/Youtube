@@ -4,7 +4,9 @@
 
 // Nodejs feature
 
-// Event loop : Means generally it a non-blocking,javascript is a single threaded language and rest work in a event loop,if you give a code to execute it will complete and again go in loop and keep moving.
+// Event loop :The Event Loop is a mechanism in JavaScript that allows JavaScript to handle multiple tasks without blocking the program. if you give a code to execute it will give a response and again go in loop and keep moving.
+//or
+// it handle a asynchronous operation which take time.
 
 // Single threaded : means at a time it will work once not a multi-tasker.(One time one work)
 
@@ -137,7 +139,7 @@
 
 //or
 
-// Aggregation Pipeline in MongoDB means processing data step-by-step using multiple stages to get the required result.
+// Aggregation Pipeline in MongoDB means processing data step-by-step using multiple stages to get the required result.And it store the data in document.
 
 // lookup : It is used to join two collections in mongodb.
 //addFields : It is used to add new fields to the documents in the aggregation pipeline.
