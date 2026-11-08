@@ -61,10 +61,10 @@
 
 // require : It just a style in common js.old version.
 
-// Event-Driven : It allows to handle multiple tasks efficiently without blocking execution.
+// Event-Driven :Event-driven means a program waits for an event to happen and then executes a function in response to that event.
 
 // V8 : taken out from chrome,open source javascript,compile js to native machine.
-
+// V8 was created by Google for Chrome, and Node.js uses it to run JavaScript outside the browser.
 // V8 is written in c++ for speed
 
 // Libuv : 1: Multi-platform support library for node.js
@@ -163,7 +163,6 @@
 
 // "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It is used in the MERN stack because it works well with JavaScript, integrates easily with Node.js and Express, and provides flexibility and scalability for modern web applications.
 
-
 // explain the purpose of mongoose in a mern application
 
 // "Mongoose is an ODM library used to connect Node.js and Express applications with MongoDB. It allows us to define schemas, validate data, and perform database operations easily. It makes working with MongoDB more structured and manageable in a MERN application."
@@ -194,6 +193,5 @@
 //Worker Threads are a Node.js feature that allows JavaScript code to run in parallel on separate threads. They are mainly used for CPU-intensive operations so that the main event loop remains free to handle other asynchronous tasks and requests.
 
 // To improve scalability in a Node.js application, the goal is to make the application handle more users and more requests without a major drop in performance.
-
 
 // To improve scalability in Node.js, we can use clustering and horizontal scaling to utilize multiple CPU cores and servers, load balancing to distribute traffic, caching to reduce database load, database optimization, asynchronous processing with queues, worker threads for CPU-intensive tasks, stateless architecture, and CDN for static content. We should also monitor performance metrics to identify bottlenecks.
