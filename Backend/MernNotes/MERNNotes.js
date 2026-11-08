@@ -21,10 +21,11 @@
 // what is REPL ?
 // ans: Executes javascript code interactively.stands for Read Evaluated Print Loop.
 
-// DNS Works: Domain Name Service, it is used to provide the IP address to connect to the web server and load the website.
+// DNS Works: Domain Name Service, it is used to provide the IP address to the user to connect to the web server and load the website.
 
 // or
 
+ 
 // DNS : it is used to give location or give the address of the website to connect to the web server and load the website.
 
 // Type of DNS
